@@ -11,7 +11,8 @@
     "crollin": "node crawl.mjs",
     "croll": "node crawl.mjs",
     "check": "node scripts/check.mjs",
-    "pack": "node scripts/pack-extension.mjs"
+    "pack": "node scripts/pack-extension.mjs",
+    "install-skill": "npx --yes skills add newrise0410/crollin --all -g -y"
   },
   "files": [
     "crawl.mjs",

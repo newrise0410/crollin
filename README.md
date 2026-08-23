@@ -36,6 +36,22 @@ crollin "URL"
 
 에이전트는 `SKILL.md`를 읽고 위 명령을 실행하면 됩니다.
 
+## 에이전트 스킬 등록
+
+Claude Code, Codex, Cursor, Gemini, Grok, Hermes 등 설치된 에이전트에 한 번에 넣습니다.
+
+```bash
+npx skills add newrise0410/crollin --all -g -y
+```
+
+`-g`는 이 컴퓨터의 모든 프로젝트에서 쓰이게 하고, `--all`은 감지된 에이전트마다 스킬 폴더에 복사합니다. 내부적으로 [skills CLI](https://github.com/vercel-labs/skills)를 씁니다.
+
+이 저장소에서:
+
+```bash
+npm run install-skill
+```
+
 ## Chrome 확장
 
 1. `chrome://extensions` → **개발자 모드**
