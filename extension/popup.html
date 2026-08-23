@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>crollin</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">PAGE READER</p>
+          <h1>crollin</h1>
+        </div>
+        <button id="optionsButton" class="icon-button" type="button" title="설정">설정</button>
+      </header>
+
+      <button id="extractButton" class="primary-button" type="button">현재 페이지 읽기</button>
+
+      <label class="field-label" for="urlInput">페이지 URL</label>
+      <div class="url-row">
+        <input id="urlInput" type="url" placeholder="https://…" autocomplete="off">
+        <button id="urlButton" class="secondary-button url-button" type="button">URL로 읽기</button>
+      </div>
+      <p id="status" class="status" role="status">현재 탭 또는 URL에서 본문을 가져옵니다.</p>
+
+      <div class="auth-row">
+        <div>
+          <span class="auth-label">전송 대상</span>
+          <span class="account-status authenticated">로그인된 ChatGPT 웹</span>
+        </div>
+        <button id="openChatButton" class="small-action-button" type="button">ChatGPT 열기</button>
+      </div>
+
+      <section id="pageSummary" class="summary hidden" aria-live="polite">
+        <div class="summary-title-row">
+          <span id="siteBadge" class="badge">-</span>
+          <span id="pageTitle" class="page-title">-</span>
+        </div>
+        <div id="stats" class="stats"></div>
+      </section>
+
+      <label class="field-label" for="prompt">GPT 요청</label>
+      <textarea id="prompt" rows="3">핵심 내용을 한국어로 요약하고, 중요한 사실·수치·행동 항목을 구분해 정리해 주세요.</textarea>
+
+      <div class="action-row">
+        <button id="copyButton" class="secondary-button" type="button" disabled>Markdown 복사</button>
+        <button id="sendButton" class="primary-button compact" type="button" disabled>ChatGPT로 보내기</button>
+      </div>
+
+      <section class="preview-section">
+        <div class="section-heading">
+          <h2>전달할 내용 미리보기</h2>
+          <span id="previewLength" class="muted">0자</span>
+        </div>
+        <pre id="preview" class="preview">페이지를 읽으면 정제된 Markdown이 여기에 표시됩니다.</pre>
+      </section>
+
+      <section id="resultSection" class="result-section hidden">
+        <div class="section-heading">
+          <h2>GPT 응답</h2>
+          <button id="copyResultButton" class="text-button" type="button">응답 복사</button>
+        </div>
+        <pre id="result" class="result"></pre>
+      </section>
+    </main>
+    <script src="extract.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

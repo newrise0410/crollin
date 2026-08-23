@@ -1,0 +1,38 @@
+{
+  "name": "crollin",
+  "version": "1.0.0",
+  "description": "네이버 블로그(iframe 우회)와 인스타그램 본문을 Markdown/JSON으로 추출",
+  "type": "module",
+  "bin": {
+    "crollin": "./crawl.mjs",
+    "croll": "./crawl.mjs"
+  },
+  "scripts": {
+    "crollin": "node crawl.mjs",
+    "croll": "node crawl.mjs",
+    "check": "node scripts/check.mjs",
+    "pack": "node scripts/pack-extension.mjs"
+  },
+  "files": [
+    "crawl.mjs",
+    "extension/extract.js",
+    "SKILL.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "naver",
+    "instagram",
+    "blog",
+    "crawler",
+    "cli",
+    "chrome-extension"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "linkedom": "^0.18.12"
+  }
+}
